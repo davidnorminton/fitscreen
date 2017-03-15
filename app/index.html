@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <!--[if IE]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+<!--build:js js/fitscreen.min.js -->
+     <script src="fitScreen.js"></script>
+<!-- endbuild -->     
+
+  </head>
+  <body>
+  <style>
+body { margin: 0; padding: 0; text-align: center; }
+.red { background: #632E2E }
+.green { background: #1F611F }
+.blue { background: #33335D }
+.orange { background: #BD7D1D }
+.paragraph{
+    margin: 0; 
+    word-wrap: break-word;    
+    font-size: 28px;
+}
+
+h1{ 
+    margin-top: 0;
+    padding-top: 68px;
+    font-size: 92px;
+    color: #9E6666;
+    text-shadow: 4px 4px black;
+ }
+/* This parent can be any width and height */
+.block {
+  text-align: center;
+
+  /* May want to do this if there is risk the container may be narrower than the element inside */
+  white-space: nowrap;
+}
+ 
+/* The ghost, nudged to maintain perfect centering */
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+/* The element to be centered, can also be of any width and height */ 
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 600px;
+}
+.usage {
+    text-align: left;
+}
+#usage{
+    font-size: 58px;
+    padding-top: 60px;
+    color: #409A40;
+    text-shadow: 2px 2px #1D4A1D;
+}
+code{
+    text-align: left;
+    color: #111B11;
+    font-size: 30px;
+    font-family: serif;
+}
+pre{
+    text-align: left;
+
+}
+h2{
+    font-size: 58px;
+    padding-top: 60px;
+    color: red;
+}
+.usage-jquery {
+    font-size: 58px;
+    padding-top: 60px;
+    color: #484886;
+    text-shadow: 2px 2px black;
+}
+#updates {
+    font-size: 58px;
+    padding-top: 60px;
+    color: #E4A84E;
+    text-shadow: 2px 2px #5D4523;
+}
+.update-list {
+    text-align: left;
+    font-size: 25px;
+    color: #422903;
+}
+  </style>
+  
+    <div id="main">
+        <section class="fullsize red">
+            <div class="centered"> 
+                <h1 class="title"> fitScreen.js</h1>
+                <p class="paragraph">
+                A jQuery plugin that resizes elements to fit the width and height of the browser view-port, which smoothly pulls the element
+                up or down to show the whole content of the element when the user has stopped scrolling.
+                </p>
+            </div>
+        </section>
+        <section class="fullsize green">    
+           <div class="centered"> 
+                <p class="usage">
+                    <h2 id="usage">The html</h2>
+<pre>
+<code>
+// add a class to the element to use with plugin 
+// and add a class to control it's styling 
+&lt;div class="fitscreen red"&gt;&lt;/div&gt;
+&lt;div class="fitscreen blue"&gt;&lt;/div&gt;
+&lt;div class="fitscreen yellow"&gt;&lt;/div&gt;
+&lt;div class="fitscreen green"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+                </p>
+            </div>
+
+        </section>
+        <section class="fullsize blue">
+           <div class="centered"> 
+                    <h2 class="usage-jquery">And the jQuery</h2>
+<pre>
+<code>
+// and the jQuery
+&lt;script&gt;
+      $('.fitscreen').fitScreen();
+&lt;/script&gt;
+
+</code>
+</pre>
+            </div>
+        </section>
+        <section class="fullsize orange">
+           <div class="centered"> 
+                    <h2 id="updates">Updates</h2>
+                    <ul class="update-list">
+                        <li> 
+                         Added smooth transition which pulls to lower or upper part of screen when 
+                         user has stopped scrolling.
+                        </li>
+                        <li>
+                         TODO: Add support for x-axis scrolling
+                        </li>
+                        <li>
+                         TODO: Add developer defined properties
+                        </li>
+                        <li>
+                         TODO: Cross browser compatability testing
+                        </li>
+                    </ul>
+            </div>
+        </section>
+    </div>
+  <script>
+      $('.fullsize').fitScreen();
+  </script>
+  </body>
+</html>
